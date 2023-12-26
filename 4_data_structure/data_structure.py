@@ -93,10 +93,118 @@
 # company	회사
 # government	정부, 정치
 # face	얼굴
-
-# sol) # TODO: 여기 부터 시작하기
+ 
+# sol)
 # word = {"environment": "환경", "company": "회사", "government": "정부, 정치", "face": "얼굴"}
-# # print("영어단어", "\t\t", "의미")
-# print("%15s" % "데이브")
-# # for k, v in word.items():
-# #     print(k, "\t\t", v)
+# for k, v in word.items():
+#     print(f"{k} : {v}")
+
+# Exercise 57. 데이터 구조 (딕셔너리)
+# 다음 영어 사전 데이터를 딕셔너리 변수로 만들고 외움표시가 X 인 영어단어만 출력하세요
+# 단, key는 영어단어, value는 의미와 외움표시 두 데이터를 넣습니다.
+# environment : 환경
+# company : 회사
+# gonernment : 정부, 정치
+# face : 얼굴
+# 영어단어	의미	외움표시
+# environment	환경	X
+# company	회사	O
+# government	정부, 정치	X
+# face	얼굴	X
+
+# sol)
+# word = {"environment": ["환경", 'X'], "company": ["회사", 'O'], "government": ["정부, 정치", 'X'], "face": ["얼굴", 'X']}
+# for k, v in word.items():
+#     if v[1] == 'X':
+#         print(k)
+
+# Exercise 58. 데이터 구조 (딕셔너리)
+# 다음 영어 사전 데이터를 딕셔너리 변수로 만들고 사용자로부터 영어단어를 입력받으면 해당 영어단어의 외움표시를 O로 수정하고, 외움표시가 X 인 단어만 출력하는 프로그램을 작성하세요.
+# 단, key는 영어단어, value는 의미와 외움표시 두 데이터를 넣습니다.
+# environment : 환경
+# company : 회사
+# gonernment : 정부, 정치
+# face : 얼굴
+# 영어단어	의미	외움표시
+# environment	환경	X
+# company	회사	O
+# government	정부, 정치	X
+# face	얼굴	X
+# 입력: government
+# 출력
+# environment
+# face
+
+# sol)
+# word = {"environment": ["환경", 'X'], "company": ["회사", 'O'], "government": ["정부, 정치", 'X'], "face": ["얼굴", 'X']}
+# strinput = input(">> ")
+# word[strinput][1] = 'O'
+
+# for k, v in word.items():
+#     if v[1] == 'X':
+#         print(k)
+
+# Exercise 59. 데이터 구조 (딕셔너리)
+# 다음 dict_all, dict2, dict3 딕셔너리 변수가 있을 때, dict2와 dict3 두 데이터를 dict_all 딕셔너리 변수에 추가한 후, dict_all 변수를 출력하세요.
+# dict_all = {'environment': '환경', 'gonernment':'정부, 정치'}
+# dict2 = {'company': '회사', 'face':'얼굴'}
+# dict3 = {'apple': '사과'}
+
+# sol1)
+# dict_all = {'environment': '환경', 'gonernment':'정부, 정치'}
+# dict2 = {'company': '회사', 'face':'얼굴'}
+# dict3 = {'apple': '사과'}
+# print(dict_all)
+# dict_all.update(dict2)
+# dict_all.update(dict3)
+# print(dict_all)
+
+# sol2)
+# dict_all = {'environment': '환경', 'gonernment':'정부, 정치'}
+# dict2 = {'company': '회사', 'face':'얼굴'}
+# dict3 = {'apple': '사과'}
+# print(dict_all)
+# for k, v in dict2.items():
+#     dict_all[k] = v
+# for k, v in dict3.items():
+#     dict_all[k] = v
+# print(dict_all)
+
+# Exercise 60. 데이터 구조 (딕셔너리)
+# 다음 actor_info 딕셔너리 변수를 만들고, 홈페이지, 배우 이름, 최근 출연 영화 갯수를 다음과 같이 출력하세요
+# actor_info = {'actor_details': {'생년월일': '1971-03-01',
+#                    '성별': '남',
+#                    '직업': '배우',
+#                    '홈페이지': 'https://www.instagram.com/madongseok'},
+#  'actor_name': '마동석',
+#  'actor_rate': 59361,
+#  'date': '2017-10',
+#  'movie_list': ['범죄도시', '부라더', '부산행']}
+# 출력 예:
+# 배우 이름: 마동석
+# 홈페이지: https://www.instagram.com/madongseok
+# 출연 영화 갯수: 3
+
+# sol)
+# actor_info = {'actor_details': {'생년월일': '1971-03-01',
+#                    '성별': '남',
+#                    '직업': '배우',
+#                    '홈페이지': 'https://www.instagram.com/madongseok'},
+#  'actor_name': '마동석',
+#  'actor_rate': 59361,
+#  'date': '2017-10',
+#  'movie_list': ['범죄도시', '부라더', '부산행']}
+
+# print(f"배우 이름: {actor_info['actor_name']}")
+# print(f"홈페이지: {actor_info['actor_details']['홈페이지']}")
+# print(f"출연 영화 갯수: {len(actor_info['movie_list'])}")
+
+# Exercise 61. 데이터 구조 (집합)
+# number_list가 다음과 같은 리스트일 때 중복 숫자를 제거한 리스트를 만들고, 출력하세요
+# number_list = [5, 1, 2, 2, 3, 3, 4, 5, 5, 6, 7, 8, 9, 9, 10, 10]
+
+# sol)
+# number_list = [5, 1, 2, 2, 3, 3, 4, 5, 5, 6, 7, 8, 9, 9, 10, 10]
+# print(number_list)
+# number_list = list(set(number_list))
+# print(number_list)
